@@ -1,0 +1,38 @@
+header {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem 4rem;
+}
+
+.logo {
+	font-weight: 900;
+	font-size: 1.5em;
+	color: var(--primary-main);
+	letter-spacing: 0.1em;
+}
+.logo:hover {
+	cursor: pointer;
+	color: var(--primary-dark);
+}
+
+.nav {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.nav > svg {
+	width: 100%;
+	transition: all 0.3s;
+	color: var(--primary-main);
+}
+
+.nav > svg:hover {
+	color: var(--primary-dark);
+	cursor: pointer;
+}
+
+.nav:hover svg:not(:hover) {
+	scale: 0.8;
+}
