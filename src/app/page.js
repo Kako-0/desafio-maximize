@@ -1,5 +1,11 @@
+import Header from "./components/header";
 import "./styles.css";
 
 export default function Home() {
-	return <main className="main">olá</main>;
+	return (
+		<>
+			<Header />
+			<main>ola</main>
+		</>
+	);
 }
