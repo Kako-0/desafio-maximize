@@ -12,3 +12,38 @@
 	padding: 6rem;
 	min-height: 100vh;
 }
+
+.container_background {
+	position: absolute;
+	top: 0;
+	left: 15%;
+	display: flex;
+	align-items: center;
+	width: 42vw;
+	overflow-wrap: break-word;
+	padding: 0 10rem;
+}
+
+.container_img {
+}
+
+.container_titulo {
+	position: absolute;
+	left: 0;
+	font-size: 18em;
+	width: 100%;
+	font-weight: 900;
+	line-height: 0.8;
+	text-shadow: -1px -1px 0 var(--primary-light), 0 -1px 0 var(--primary-light),
+		1px -1px 0 var(--primary-light), 1px 0 0 var(--primary-light),
+		1px 1px 0 var(--primary-light), 0 1px 0 var(--primary-light),
+		-1px 1px 0 var(--primary-light), -1px 0 0 var(--primary-light);
+
+	mix-blend-mode: lighten;
+}
+
+.titulo-blend {
+	mix-blend-mode: normal;
+	color: var(--primary-light);
+	z-index: -1;
+}
