@@ -1,104 +1,104 @@
 "use client";
 import EnviarIcon from "@/app/assets/icon-enviar";
-import "./styles.css";
+import "./styles.scss";
 
 export default function Forms() {
 	return (
-		<section className="container_forms">
+		<section className="container-forms">
 			<form action="#" className="forms">
 				{/* Input de interesse*/}
-				<div className="input input-select">
-					<select name="relacoes" id="relacao">
+				<div className="forms__input forms__input--select">
+					<select name="relacoes" id="relacao" className="forms__select">
 						<option value="imprensa">Imprensa</option>
 						<option value="fa_clubes">Fã-Clubes</option>
 					</select>
-					<label for="relacao" className="input_label">
+					<label htmlFor="relacao" className="forms__label">
 						Seu contato é relacionado a:
 					</label>
 				</div>
 
 				{/* Inputs das informações do contato */}
-				<div>
-					<div className="input">
+				<div className="forms__input-group">
+					<div className="forms__input">
 						<input
 							id="nome"
 							name="nome"
 							type="text"
-							className="input_field"
+							className="forms__input-field"
 							required
 						/>
-						<label htmlFor="nome" className="input_label">
+						<label htmlFor="nome" className="forms__label">
 							Nome
 						</label>
 					</div>
-					<div className="input">
+					<div className="forms__input">
 						<input
 							id="empresa"
 							name="empresa"
 							type="text"
-							className="input_field"
+							className="forms__input-field"
 							required
 						/>
-						<label htmlFor="empresa" className="input_label">
+						<label htmlFor="empresa" className="forms__label">
 							Empresa
 						</label>
 					</div>
-					<div className="input">
+					<div className="forms__input">
 						<input
 							id="email"
 							name="email"
 							type="email"
-							className="input_field"
+							className="forms__input-field"
 							required
 						/>
-						<label htmlFor="email" className="input_label">
+						<label htmlFor="email" className="forms__label">
 							E-mail
 						</label>
 					</div>
-					<div className="input">
+					<div className="forms__input">
 						<input
 							id="telefone"
 							name="telefone"
 							type="tel"
 							pattern="[0-9]{2}9[0-9]{8}"
-							className="input_field"
+							className="forms__input-field"
 							required
 						/>
-						<label htmlFor="telefone" className="input_label">
+						<label htmlFor="telefone" className="forms__label">
 							Telefone
 						</label>
 					</div>
 				</div>
 
 				{/* Input da mensagem */}
-				<div className="input input-textarea">
+				<div className="forms__input forms__input--textarea">
 					<textarea
 						rows="4"
-						cols="80"
 						minLength={2}
 						required
 						placeholder="Digite aqui..."
 						id="mensagem"
 						name="mensagem"
+						className="forms__textarea"
 					></textarea>
-					<label htmlFor="mensagem" className="input_label">
+					<label htmlFor="mensagem" className="forms__label">
 						Mensagem
 					</label>
 				</div>
 
 				{/* Inputs de verificação e submit */}
-				<div className="input input--checkbox">
-					<label for="naoRobo" className="input__label">
+				<div className="forms__input forms__input--checkbox">
+					<label htmlFor="naoRobo">
 						<input
 							type="checkbox"
 							id="naoRobo"
 							name="nao-sou-robo"
-							className="input__checkbox"
+							className="forms__checkbox"
 							required
 						/>
 						Não sou um robô
 					</label>
-					<button type="submit" className="input__submit">
+					<button type="submit" className="forms__submit">
 						Enviar <EnviarIcon />
 					</button>
 				</div>

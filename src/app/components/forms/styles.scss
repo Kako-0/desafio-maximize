@@ -1,10 +1,16 @@
-.container_forms {
-	align-self: flex-end;
+@use "../../sass/mixins";
+
+.container-forms {
+	align-self: center;
 	padding: 0 2rem;
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
 	gap: 1rem;
+	width: 100%;
+	@include mixins.breakpoint(md) {
+		padding: 0 10rem;
+	}
 }
 
 .forms {
@@ -12,21 +18,26 @@
 	flex-direction: column;
 	align-items: stretch;
 	gap: 1rem;
+	width: 100%;
 }
 
-.input {
+.forms__input {
 	display: flex;
 	flex-direction: column-reverse;
 	position: relative;
 	padding-top: 10px;
+
+	& + & {
+		margin-top: 1rem;
+	}
 }
 
-.input-select > label,
-.input-textarea > label {
+.forms__input--select > label,
+.forms__input--textarea > label {
 	position: static;
 }
 
-.input-select > select {
+.forms__input--select > select {
 	padding: 1rem;
 	border-color: #c4c4c4;
 	border-radius: 8px;
@@ -38,28 +49,35 @@
 	background-size: 16px;
 	background-position: calc(100% - 20px) 17px;
 	background-repeat: no-repeat;
+
+	&:focus {
+		border-color: var(--primary-main);
+	}
 }
 
-.input-select > select:focus {
-	border-color: var(--primary-main);
-}
-.input-textarea > textarea {
+.forms__input--textarea > textarea {
 	border-radius: 8px;
 	padding: 1rem;
 	resize: none;
 }
 
-.input--checkbox {
+.forms__input--checkbox {
 	display: grid;
-	grid-template-columns: auto 1fr;
-	gap: 8rem;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+
+	@include mixins.breakpoint(md) {
+		grid-template-columns: auto 1fr;
+		gap: 8rem;
+		align-items: center;
+	}
 }
 
-.input__checkbox {
+.forms__checkbox {
 	margin-right: 0.5rem;
 }
 
-.input__submit {
+.forms__submit {
 	background-color: var(--primary-main);
 	color: var(--bg-color);
 	font-weight: 600;
@@ -69,33 +87,31 @@
 	border-radius: 8px;
 	border: none;
 	transition: all 0.3s;
+
+	&:hover {
+		opacity: 0.8;
+		color: var(--text-color);
+		cursor: pointer;
+	}
+
+	&:active {
+		background-color: var(--primary-dark);
+	}
+
+	&:focus {
+		opacity: 0.8;
+		color: var(--text-color);
+	}
 }
 
-.input__submit:hover {
-	opacity: 0.8;
-	color: var(--text-color);
-
-	cursor: pointer;
-}
-.input__submit:active {
-	background-color: var(--primary-dark);
-}
-.input__submit:focus {
-	opacity: 0.8;
-	color: var(--text-color);
-}
-
-.input + .input {
-	margin-top: 1rem;
-}
-
-.input_label {
+.forms__label {
 	position: absolute;
 	top: 15px;
 	transition: all 0.3s;
 	font-weight: 300;
 }
-.input_field {
+
+.forms__input-field {
 	border: 0;
 	padding: 0;
 	z-index: 1;
@@ -103,13 +119,15 @@
 	border-bottom: 2px solid #c4c4c4;
 	font-size: 14px;
 	line-height: 30px;
-}
-.input_field:focus,
-.input_field:valid {
-	outline: 0;
-	border-bottom-color: var(--primary-main);
-}
-.input_field:focus + .input_label,
-.input_field:valid + .input_label {
-	transform: translateY(-30px);
+
+	&:focus,
+	&:valid {
+		outline: 0;
+		border-bottom-color: var(--primary-main);
+	}
+
+	&:focus + .forms__label,
+	&:valid + .forms__label {
+		transform: translateY(-30px);
+	}
 }
