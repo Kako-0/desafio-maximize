@@ -1,0 +1,39 @@
+@use "../../sass/mixins";
+
+.aside-menu {
+	display: none;
+
+	@include mixins.breakpoint(lg) {
+		display: block;
+		margin-top: 4rem;
+		padding: 1rem 0;
+	}
+}
+
+.menu {
+	display: none;
+	align-items: flex-end;
+	justify-content: center;
+	gap: 1rem;
+	flex-direction: column;
+	list-style: none;
+	width: fit-content;
+
+	@include mixins.breakpoint(lg) {
+		display: flex;
+	}
+
+	.menu__item {
+		text-align: right;
+		cursor: pointer;
+		&:hover {
+			color: var(--primary-main);
+		}
+	}
+
+	.menu__divider {
+		width: 20%;
+		height: 2px;
+		background-color: var(--primary-main);
+	}
+}
