@@ -1,0 +1,67 @@
+@use "../../sass/mixins";
+
+.header {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 2rem;
+
+	@include mixins.breakpoint(lg) {
+		padding: 2rem 4rem;
+		position: fixed;
+	}
+}
+
+.header__logo {
+	font-weight: 900;
+	font-size: 1.5em;
+	color: var(--primary-main);
+	letter-spacing: 0.1em;
+	&:hover {
+		cursor: pointer;
+		color: var(--primary-dark);
+	}
+}
+
+.header__menu {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	color: var(--primary-main);
+
+	@include mixins.breakpoint(lg) {
+		display: none;
+	}
+
+	.sr-only {
+		display: none;
+	}
+}
+
+.header__nav {
+	display: none;
+
+	:hover svg:not(:hover) {
+		scale: 0.8;
+		opacity: 0.8;
+	}
+
+	@include mixins.breakpoint(lg) {
+		display: flex;
+		gap: 0.5rem;
+		background-color: var(--bg-color);
+	}
+
+	& > svg {
+		width: 100%;
+		transition: all 0.3s;
+		color: var(--primary-main);
+		cursor: pointer;
+
+		&:hover {
+			color: var(--primary-dark);
+		}
+	}
+}
