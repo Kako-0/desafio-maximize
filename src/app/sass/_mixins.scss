@@ -17,6 +17,10 @@
 		@media (min-width: vars.$xlBreakpoint) {
 			@content;
 		}
+	} @else if $point == xxl {
+		@media (min-width: vars.$xxlBreakpoint) {
+			@content;
+		}
 	} @else {
 		@warn 'Not a valid breakpoint name.';
 	}
