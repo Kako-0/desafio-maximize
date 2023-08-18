@@ -21,6 +21,7 @@
 	}
 
 	@include mixins.breakpoint(md) {
+		padding: 1rem;
 		flex-direction: row;
 		justify-content: space-between;
 	}
