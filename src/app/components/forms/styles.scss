@@ -9,6 +9,9 @@
 	gap: 1rem;
 	width: 100%;
 	@include mixins.breakpoint(md) {
+		padding: 0 2rem;
+	}
+	@include mixins.breakpoint(lg) {
 		padding: 0 10rem;
 	}
 }
@@ -68,7 +71,7 @@
 
 	@include mixins.breakpoint(md) {
 		grid-template-columns: auto 1fr;
-		gap: 8rem;
+		gap: 2rem;
 		align-items: center;
 	}
 }
@@ -87,6 +90,10 @@
 	border-radius: 8px;
 	border: none;
 	transition: all 0.3s;
+
+	@include mixins.breakpoint(md) {
+		max-width: 12rem;
+	}
 
 	&:hover {
 		opacity: 0.8;
