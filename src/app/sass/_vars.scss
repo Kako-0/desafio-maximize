@@ -1,4 +1,14 @@
-$smBreakpoint: 480px;
-$mdBreakpoint: 720px;
-$lgBreakpoint: 960px;
-$xlBreakpoint: 1200px;
+//Dispositivos pequenos
+$smBreakpoint: 640px;
+
+//Dispositivos médios
+$mdBreakpoint: 768px;
+
+//Dispositivos largos
+$lgBreakpoint: 1024px;
+
+//Dispositivos extra largos
+$xlBreakpoint: 1280px;
+
+//Dispositivos muito largos
+$xxlBreakpoint: 1536px;
