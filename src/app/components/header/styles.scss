@@ -9,7 +9,7 @@
 
 	@include mixins.breakpoint(lg) {
 		padding: 2rem 4rem;
-		position: fixed;
+		position: absolute;
 	}
 }
 
@@ -43,7 +43,7 @@
 .header__nav {
 	display: none;
 
-	:hover svg:not(:hover) {
+	&:hover svg:not(:hover) {
 		scale: 0.8;
 		opacity: 0.8;
 	}
