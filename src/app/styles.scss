@@ -10,6 +10,7 @@
 	@include mixins.breakpoint(lg) {
 		padding: 0 4rem;
 		grid-template-columns: 1fr auto;
+		margin-bottom: 4rem;
 	}
 }
 
@@ -22,6 +23,5 @@
 
 	@include mixins.breakpoint(lg) {
 		flex-direction: row;
-		padding: 0 4rem;
 	}
 }
