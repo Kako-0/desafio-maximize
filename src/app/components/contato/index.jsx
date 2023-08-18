@@ -19,8 +19,16 @@ export default function Contato() {
 					/>
 				</div>
 
-				<span className="main__background-titulo titulo-blend">CONTATO</span>
-				<h1 className="main__background-titulo">CONTATO</h1>
+				<span className="main__background-titulo titulo-blend">
+					CON
+					<br />
+					TATO
+				</span>
+				<h1 className="main__background-titulo">
+					CON
+					<br />
+					TATO
+				</h1>
 			</div>
 			{/* Informações de contato profissional */}
 			<div className="main_info">
