@@ -1,16 +1,44 @@
 "use client";
 import EnviarIcon from "@/app/assets/icon-enviar";
 import "./styles.scss";
+import { useState } from "react";
+import { setDados } from "@/app/apis/databaseApi";
 
 export default function Forms() {
+	const [nome, setNome] = useState("");
+	const [nomeEmpresa, setNomeEmpresa] = useState("");
+	const [email, setEmail] = useState("");
+	const [relacao, setRelacao] = useState("imprensa");
+	const [telefone, setTelefone] = useState("");
+	const [mensagem, setMensagem] = useState("");
+
 	return (
 		<section className="container-forms">
-			<form action="#" className="forms">
+			<form
+				className="forms"
+				onSubmit={(event) => {
+					event.preventDefault();
+
+					setDados({
+						nome,
+						nomeEmpresa,
+						email,
+						relacao,
+						telefone,
+						mensagem,
+					});
+				}}
+			>
 				{/* Input de interesse*/}
 				<div className="forms__input forms__input--select">
-					<select name="relacoes" id="relacao" className="forms__select">
-						<option value="imprensa">Imprensa</option>
-						<option value="fa_clubes">Fã-Clubes</option>
+					<select
+						name="relacoes"
+						id="relacao"
+						className="forms__select"
+						onChange={(event) => setRelacao(event.target.value)}
+					>
+						<option value="Imprensa">Imprensa</option>
+						<option value="Fã-clubes">Fã-Clubes</option>
 					</select>
 					<label htmlFor="relacao" className="forms__label">
 						Seu contato é relacionado a:
@@ -26,6 +54,8 @@ export default function Forms() {
 							type="text"
 							className="forms__input-field"
 							required
+							onChange={(event) => setNome(event.target.value)}
+							value={nome}
 						/>
 						<label htmlFor="nome" className="forms__label">
 							Nome
@@ -38,6 +68,8 @@ export default function Forms() {
 							type="text"
 							className="forms__input-field"
 							required
+							onChange={(event) => setNomeEmpresa(event.target.value)}
+							value={nomeEmpresa}
 						/>
 						<label htmlFor="empresa" className="forms__label">
 							Empresa
@@ -50,6 +82,8 @@ export default function Forms() {
 							type="email"
 							className="forms__input-field"
 							required
+							onChange={(event) => setEmail(event.target.value)}
+							value={email}
 						/>
 						<label htmlFor="email" className="forms__label">
 							E-mail
@@ -63,6 +97,8 @@ export default function Forms() {
 							pattern="[0-9]{2}9[0-9]{8}"
 							className="forms__input-field"
 							required
+							onChange={(event) => setTelefone(event.target.value)}
+							value={telefone}
 						/>
 						<label htmlFor="telefone" className="forms__label">
 							Telefone
@@ -80,6 +116,8 @@ export default function Forms() {
 						id="mensagem"
 						name="mensagem"
 						className="forms__textarea"
+						onChange={(event) => setMensagem(event.target.value)}
+						value={mensagem}
 					></textarea>
 					<label htmlFor="mensagem" className="forms__label">
 						Mensagem
