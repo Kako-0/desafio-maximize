@@ -1,7 +1,25 @@
-import Mensagem from "../components/mensagem";
+"use client";
+import Mensagem from "@/app/components/mensagem";
 import "./styles.scss";
+import { getDados } from "@/app/apis/databaseApi";
+import { useEffect, useState } from "react";
 
 export default function ManagerPage() {
+	const [mensagens, setMensagens] = useState([]);
+
+	useEffect(() => {
+		const fetchMensagens = async () => {
+			try {
+				const mensagensObtidas = await getDados();
+				setMensagens(mensagensObtidas);
+			} catch (erro) {
+				console.error("Ocorreu um erro ao buscar mensagens:", erro);
+			}
+		};
+
+		fetchMensagens();
+	}, []);
+
 	return (
 		<div className="page">
 			<div className="input">
@@ -40,9 +58,12 @@ export default function ManagerPage() {
 					</tr>
 				</thead>
 				<tbody className="sendbox__container-mensagens">
-					<Mensagem />
+					{mensagens.map((mensagem) => (
+						<Mensagem key={mensagem.email} {...mensagem} />
+					))}
 				</tbody>
 			</table>
+			<div></div>
 		</div>
 	);
 }

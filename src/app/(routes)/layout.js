@@ -1,5 +1,5 @@
-import { poppins } from "./fonts";
-import "./globals.scss";
+import { poppins } from "../fonts";
+import "../globals.scss";
 
 export const metadata = {
 	title: "Projeto Maximize",
