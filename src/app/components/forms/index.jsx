@@ -8,9 +8,18 @@ export default function Forms() {
 	const [nome, setNome] = useState("");
 	const [nomeEmpresa, setNomeEmpresa] = useState("");
 	const [email, setEmail] = useState("");
-	const [relacao, setRelacao] = useState("imprensa");
+	const [relacao, setRelacao] = useState("Imprensa");
 	const [telefone, setTelefone] = useState("");
 	const [mensagem, setMensagem] = useState("");
+
+	const reset = () => {
+		setRelacao("Imprensa");
+		setNome("");
+		setNomeEmpresa("");
+		setEmail("");
+		setTelefone("");
+		setMensagem("");
+	};
 
 	return (
 		<section className="container-forms">
@@ -27,6 +36,8 @@ export default function Forms() {
 						telefone,
 						mensagem,
 					});
+
+					reset();
 				}}
 			>
 				{/* Input de interesse*/}
