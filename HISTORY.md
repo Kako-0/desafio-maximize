@@ -38,3 +38,5 @@ Se houvesse mais tempo disponível, algumas ideias adicionais poderiam ser imple
 5. Falando em Figma, criei o layout de como ficaria a tela em telas mobile.
 
 6. O uso do Firebase se deu pela praticidade ao criar um backend e banco de dados, já que o foco era o frontend.
+
+7. O manager criado por mim, foi feito de forma mais minimalista. Optei em não criar um página inteira para visualizar uma única mensagem, porém criei um accordion que mostra com mais detalhes sobre as informações para cada mensagem salva no banco de dados, além de um mecanismo de busca por nome.
