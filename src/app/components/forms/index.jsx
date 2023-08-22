@@ -3,6 +3,7 @@ import EnviarIcon from "@/app/assets/icon-enviar";
 import "./styles.scss";
 import { useState } from "react";
 import { setDados } from "@/app/apis/databaseApi";
+import { sendEmail } from "@/app/apis/emailjsApi";
 
 export default function Forms() {
 	const [nome, setNome] = useState("");
@@ -36,6 +37,8 @@ export default function Forms() {
 						telefone,
 						mensagem,
 					});
+
+					sendEmail(nome, mensagem, email);
 
 					reset();
 				}}
