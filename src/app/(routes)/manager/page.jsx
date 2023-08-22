@@ -6,6 +6,29 @@ import { useEffect, useState } from "react";
 
 export default function ManagerPage() {
 	const [mensagens, setMensagens] = useState([]);
+	const [busca, setBusca] = useState([]);
+	const [estaBuscando, setEstaBuscando] = useState(false);
+
+	const buscar = (event) => {
+		const busca = event.target.value;
+		if (busca.length > 0) {
+			setEstaBuscando(true);
+
+			// Regexp com base no valor do input de buscas.
+			// "gi" significa que busca todas as correspondências e
+			// indiferente a maiúsculas e minúsculas.
+			const regra = new RegExp(busca, "gi");
+
+			const mensagensBuscadas = mensagens.filter((mensagem) => {
+				// Verifica se o nome é compatível com o regexp criado
+				return regra.test(mensagem.nome);
+			});
+
+			setBusca(mensagensBuscadas);
+		} else {
+			setEstaBuscando(false);
+		}
+	};
 
 	useEffect(() => {
 		const fetchMensagens = async () => {
@@ -47,7 +70,8 @@ export default function ManagerPage() {
 						type="text"
 						id="table-search"
 						className="input__container-text"
-						placeholder="Pesquisar E-mail"
+						placeholder="Pesquisar Nome"
+						onChange={(event) => buscar(event)}
 					/>
 				</div>
 			</div>
@@ -58,9 +82,19 @@ export default function ManagerPage() {
 					</tr>
 				</thead>
 				<tbody className="sendbox__container-mensagens">
-					{mensagens.map((mensagem) => (
-						<Mensagem key={mensagem.email} {...mensagem} />
-					))}
+					{estaBuscando
+						? busca.map((mensagem) => (
+								<Mensagem
+									key={`${mensagem.nome}-${mensagem.mensagem.slice(0, 5)}`}
+									{...mensagem}
+								/>
+						  ))
+						: mensagens.map((mensagem) => (
+								<Mensagem
+									key={`${mensagem.nome}-${mensagem.mensagem.slice(0, 5)}`}
+									{...mensagem}
+								/>
+						  ))}
 				</tbody>
 			</table>
 			<div></div>
