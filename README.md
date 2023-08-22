@@ -1,34 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Desafio Maximize
 
-## Getting Started
+Bem-vindo ao repositório do projeto! Este projeto utiliza o framework Next.js para criar uma aplicação web moderna.
 
-First, run the development server:
+## Pré-requisitos
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Antes de começar, você precisará ter o Node.js e o npm (Node Package Manager) instalados no seu computador.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Node.js (v14.x ou superior)
+- npm (Normalmente é instalado junto com o Node.js)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Instalação
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Faça um clone deste repositório para o seu computador:
 
-## Learn More
+   ```bash
+   git clone https://github.com/Kako-0/desafio-maximize.git
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+   ou
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   git clone git@github.com:Kako-0/desafio-maximize.git
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+2. Navegue até o diretório do projeto:
 
-## Deploy on Vercel
+   ```bash
+   cd nome-do-seu-repositorio
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Instale as dependências do projeto:
+   ```bash
+   npm install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Uso
+
+1. Inicie o servidor de desenvolvimento:
+
+   ```bash
+   npm run dev
+   ```
+
+2. Abra seu navegador e acesse http://localhost:3000 para ver a aplicação em execução.
+
+## Rotas
+
+1. A página inicial padrão se encontra em /
+
+2. Para acessa o Manager de mensagens acesse manualmente http://localhost:3000/manager
